@@ -8,13 +8,15 @@ type ButtonPropsType = {
     disabled?: boolean
 }
 
-const Button = (props: ButtonPropsType) => {
+const Button: React.FC<ButtonPropsType> = ({title, callBack, disabled}) => {
     const onClickHandler = () => {
-        props.callBack()
+        callBack()
     }
 
     return (
-        <button className={style.default} onClick={onClickHandler} disabled={props.disabled}>{props.title}</button>
+        <div className={style.buttonContainer}>
+            <button className={style.btn} onClick={onClickHandler} disabled={disabled}>{title}</button>
+        </div>
     );
 };
 
