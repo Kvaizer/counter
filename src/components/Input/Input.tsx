@@ -1,6 +1,5 @@
-import React, {ChangeEvent, useState} from 'react';
+import React, {ChangeEvent} from 'react';
 import style from './Input.module.css'
-import Button from '../Button/Button';
 
 type InputSetType = {
     id: string
@@ -12,7 +11,6 @@ type InputSetType = {
 const InputSet: React.FC<InputSetType> = ({ startValue, callBack, onFocus, id}) => {
 
     const onChangeHandler = (event: ChangeEvent<HTMLInputElement>) => {
-        console.log(event.currentTarget.value)
         if(Number(event.currentTarget.value)) {
             callBack(Number(event.currentTarget.value))
         }
